@@ -35,6 +35,8 @@ public class SmsReceiver extends BroadcastReceiver {
                     try {
                         jsonObj.put("messageBody", sms.getMessageBody());
                         jsonObj.put("originatingAddress", sms.getOriginatingAddress());
+						jsonObj.put("time", sms.getTimestampMillis());
+                        jsonObj.put("isSmsStatusReport", sms.isStatusReportMessage());
                     } catch (Exception e) {
                         System.out.println("Error: " + e);
                     }
